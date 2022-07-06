@@ -1,0 +1,5 @@
+node_modules
+package-lock.json
+notas.txt
+RPG-maker/.vscode
+RPG-maker/api/info_personagens/dist

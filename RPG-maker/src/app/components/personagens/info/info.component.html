@@ -1,0 +1,11 @@
+<div *ngIf="personagem">
+  <h2>Detalhes de {{ personagem.nomePersonagem | uppercase }}{{ personagem.titulo }}</h2>
+  <div>
+    <label for="personagem-nome">Nome: </label>
+    <input id="personagem-nome" [(ngModel)]="personagem.nomePersonagem" placeholder="Nome">
+  </div>
+  <div>ID: {{ personagem.idPersonagem }}</div>
+  <div>Classe: {{ personagem.classe }}</div>
+  <div>Nível: {{ personagem.nivel }}</div>
+  <button type="button" (click)="goBack()">Voltar</button>
+</div>
