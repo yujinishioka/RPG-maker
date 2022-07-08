@@ -1,9 +1,9 @@
 <h2>Personagens</h2>
 <ul class="personagens">
   <li *ngFor="let personagem of personagens">
-    <a routerLink="/detalhes/{{ personagem.idPersonagem }}">
-      <span class="badge">{{ personagem.idPersonagem }}</span>
-      {{ personagem.nomePersonagem }}
+    <a routerLink="/personagens/info/{{ personagem.id_personagem }}">
+      <span class="badge">{{ personagem.id_personagem }}</span>
+      {{ personagem.nome_personagem }}
     </a>
   </li>
 </ul>

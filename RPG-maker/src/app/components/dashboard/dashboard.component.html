@@ -1,7 +1,7 @@
 <h2>Top Jogadores</h2>
 <div class="personagens-menu">
   <a *ngFor="let personagem of personagens"
-    routerLink="/detalhes/{{personagem.idPersonagem}}">
+    routerLink="/personagens/info/{{personagem.id_personagem}}">
     {{ personagem.nomeJogador }}
   </a>
 </div>

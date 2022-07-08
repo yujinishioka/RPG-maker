@@ -1,4 +1,3 @@
-import { TipoDano } from './../tipo-dano/entities/tipo-dano.entity';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Conjuracao } from './entities/conjuracao.entity';

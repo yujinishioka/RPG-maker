@@ -7,9 +7,9 @@ import { Status } from './status';
 
 export class Personagem {
 
-  idPersonagem!: number;
+  id_personagem!: number;
   nomeJogador!: string;
-  nomePersonagem!: string;
+  nome_personagem!: string;
   titulo?: string;
   raca!: string;
   classe!: string;

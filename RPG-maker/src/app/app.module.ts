@@ -1,3 +1,4 @@
+import { ApiService } from 'src/app/services/api.service';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,6 +24,9 @@ import { MensagensComponent } from './components/mensagens/mensagens.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+  ],
+  providers: [
+    ApiService
   ],
   bootstrap: [AppComponent]
 })

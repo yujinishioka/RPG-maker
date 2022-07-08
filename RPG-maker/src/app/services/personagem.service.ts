@@ -18,7 +18,7 @@ export class PersonagemService {
   }
 
   getPersonagem(id: number): Observable<Personagem> {
-    const personagem = PERSONAGENS.find(p => p.idPersonagem === id)!;
+    const personagem = PERSONAGENS.find(p => p.id_personagem === id)!;
     this.mensagemService.add(`PersonagemService: fetched personagem id=${id}`);
     return of(personagem);
   }
