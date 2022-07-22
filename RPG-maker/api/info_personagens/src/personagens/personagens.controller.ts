@@ -3,9 +3,9 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
+  Patch,
 } from '@nestjs/common';
 import { PersonagensService } from './personagens.service';
 import { CreatePersonagemDto } from './dto/create-personagem.dto';

@@ -22,6 +22,7 @@ import { PersonagensModule } from './personagens/personagens.module';
       database: process.env.POSTGRES_DATABASE,
       autoLoadEntities: true,
       synchronize: false,
+      logging: false,
     }),
     TipoDanoModule,
     DanoModule,

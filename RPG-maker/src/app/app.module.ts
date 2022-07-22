@@ -1,29 +1,30 @@
-import { ApiService } from 'src/app/services/api.service';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 
+import { ApiService } from 'src/app/services/api.service';
 import { AppComponent } from './app.component';
 import { PersonagensComponent } from './components/personagens/personagens.component';
-import { PersonagemDetalhesComponent } from './components/personagens/info/info.component';
-import { AppRoutingModule } from './app-routing.module';
+import { PersonagemInfoComponent } from './components/personagens/info/info.component';
+import { PersonagemEditarComponent } from './components/personagens/info/editar/editar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { MensagensComponent } from './components/mensagens/mensagens.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonagensComponent,
-    PersonagemDetalhesComponent,
+    PersonagemInfoComponent,
+    PersonagemEditarComponent,
     DashboardComponent,
-    MensagensComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [
     ApiService

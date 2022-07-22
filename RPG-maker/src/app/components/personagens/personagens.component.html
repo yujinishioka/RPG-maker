@@ -1,7 +1,7 @@
 <h2>Personagens</h2>
 <ul class="personagens">
   <li *ngFor="let personagem of personagens">
-    <a routerLink="/personagens/info/{{ personagem.id_personagem }}">
+    <a routerLink="/personagens/{{ personagem.id_personagem }}">
       <span class="badge">{{ personagem.id_personagem }}</span>
       {{ personagem.nome_personagem }}
     </a>

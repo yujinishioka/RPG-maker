@@ -1,11 +1,16 @@
 <div *ngIf="personagem">
-  <h2>Detalhes de {{ personagem.nome_personagem | uppercase }}{{ personagem.titulo }}</h2>
-  <div>
-    <label for="personagem-nome">Nome: </label>
-    <input id="personagem-nome" [(ngModel)]="personagem.nome_personagem" placeholder="Nome">
+  <div *ngIf="personagem.titulo == ''">
+    <h2>Detalhes de {{ personagem.nome_personagem | uppercase }}</h2>
   </div>
+  <div *ngIf="personagem.titulo">
+    <h2>Detalhes de {{ personagem.nome_personagem | uppercase }}, {{ personagem.titulo }}</h2>
+  </div>
+  <div>Nome: {{ personagem.nome_personagem}}</div>
   <div>ID: {{ personagem.id_personagem }}</div>
-  <div>Classe: {{ personagem.classe }}</div>
   <div>Nível: {{ personagem.nivel }}</div>
+  <div>Experiencia: {{ personagem.experiencia }}</div>
   <button type="button" (click)="goBack()">Voltar</button>
+  <a routerLink="/personagens/{{ personagem.id_personagem }}/editar">
+    <button type="button">Editar</button>
+  </a>
 </div>

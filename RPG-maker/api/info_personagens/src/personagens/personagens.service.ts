@@ -11,7 +11,7 @@ export class PersonagensService {
     @InjectRepository(Personagem)
     private personagensRepository: Repository<Personagem>,
   ) {}
-  create(createPersonagenDto: CreatePersonagemDto) {
+  create(createPersonagemDto: CreatePersonagemDto) {
     return 'This action adds a new personagem';
   }
 
@@ -23,8 +23,12 @@ export class PersonagensService {
     return this.personagensRepository.findOne({ where: { id_personagem: id } });
   }
 
-  update(id: number, updatePersonagenDto: UpdatePersonagemDto) {
-    return `This action updates a #${id} personagem`;
+  update(id: number, updatePersonagemDto: UpdatePersonagemDto) {
+    const personagem = new Personagem();
+    personagem.nome_personagem = updatePersonagemDto.nome_personagem;
+    personagem.titulo = updatePersonagemDto.titulo;
+    const aux = this.personagensRepository.update(id, personagem);
+    return aux;
   }
 
   remove(id: number) {

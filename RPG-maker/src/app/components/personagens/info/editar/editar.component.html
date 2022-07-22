@@ -1,0 +1,12 @@
+<div *ngIf="personagem">
+  <h2>Editar: {{ personagem.nome_personagem }}</h2>
+  <form *ngIf="personagemForm" [formGroup]="personagemForm" (ngSubmit)="update()">
+    <label for="nome_personagem">Nome: </label>
+    <input type="text" id="nome_personagem" formControlName="nome_personagem">
+
+    <label for="titulo">Título: </label>
+    <input type="text" id="titulo" formControlName="titulo">
+
+    <input type="submit">
+  </form>
+</div>
