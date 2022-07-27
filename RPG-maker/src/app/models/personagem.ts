@@ -8,14 +8,12 @@ import { Status } from './status';
 export class Personagem {
 
   id_personagem!: number;
-  nomeJogador!: string;
+  nome_jogador!: string;
   nome_personagem!: string;
   titulo?: string;
-  raca!: string;
-  classe!: string;
-  alinhamento!: string;
   nivel!: number;
   experiencia!: number;
+  id_alinhamento!: number;
   iniciativa!: number;
   deslocamento!: number;
   armadura!: number;
@@ -28,8 +26,8 @@ export class Personagem {
   periciaProficiencia!: PericiaProficiencia;
   pericia!: Pericia;
 
-  inspiracao?: number | null;
-  debuff?: string | null;
+  inspiracao?: boolean;
+  debuff?: string;
 
   conjuracao?: Array<Conjuracao>;
   ataque?: Array<Ataque>;

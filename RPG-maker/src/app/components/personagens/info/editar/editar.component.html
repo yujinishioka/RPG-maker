@@ -1,12 +1,25 @@
 <div *ngIf="personagem">
   <h2>Editar: {{ personagem.nome_personagem }}</h2>
   <form *ngIf="personagemForm" [formGroup]="personagemForm" (ngSubmit)="update()">
-    <label for="nome_personagem">Nome: </label>
-    <input type="text" id="nome_personagem" formControlName="nome_personagem">
-
-    <label for="titulo">Título: </label>
-    <input type="text" id="titulo" formControlName="titulo">
-
-    <input type="submit">
+    <div class="campo">
+      <label for="nome_personagem">Nome: </label>
+      <input type="text" id="nome_personagem" formControlName="nome_personagem">
+    </div>
+    <div class="campo">
+      <label for="titulo">Título: </label>
+      <input type="text" id="titulo" formControlName="titulo">
+    </div>
+    <div class="campo">
+      <label for="alinhamento">Alinhamento: </label>
+      <select formControlName="id_alinhamento">
+        <option
+          *ngFor="let alinhamento of alinhamentos" value="{{ alinhamento.id_alinhamento }}"
+          >
+          {{ alinhamento.tipo }}
+        </option>
+      </select>
+    </div>
+    <input type="submit" id="salvar" value="Salvar">
+    <button type="button" (click)="goBack()">Voltar</button>
   </form>
 </div>

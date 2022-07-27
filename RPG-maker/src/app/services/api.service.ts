@@ -1,8 +1,10 @@
-import { Observable, of } from 'rxjs';
-import { Personagem } from './../models/personagem';
-import { environment } from './../../environments/environment';
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from 'rxjs';
+
+import { Alinhamento } from "../models/alinhamento";
+import { Personagem } from './../models/personagem';
+import { environment } from './../../environments/environment';
 
 @Injectable()
 export class ApiService {
@@ -22,9 +24,18 @@ export class ApiService {
   }
 
   updatePersonagem(personagem: Personagem): Observable<Personagem> {
-    console.log('frontend personagem: ', personagem);
     let response = this.http.patch<Personagem>(`${this.baseUrl}/personagens/${personagem.id_personagem}`,  personagem);
     response.toPromise().then(personagem => console.log(personagem));
+    return response;
+  }
+
+  getAllAlinhamentos(): Observable<Alinhamento[]> {
+    let response = this.http.get<Alinhamento[]>(`${this.baseUrl}/alinhamentos`);
+    return response
+  }
+
+  getAlinhamento(id:number): Observable<Alinhamento> {
+    let response = this.http.get<Alinhamento>(`${this.baseUrl}/alinhamentos/${id}`);
     return response;
   }
 }

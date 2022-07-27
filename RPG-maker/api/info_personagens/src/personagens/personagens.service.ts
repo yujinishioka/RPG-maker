@@ -16,7 +16,9 @@ export class PersonagensService {
   }
 
   findAll() {
-    return this.personagensRepository.find();
+    return this.personagensRepository.find({
+      order: { id_personagem: 'ASC' },
+    });
   }
 
   findOne(id: number) {

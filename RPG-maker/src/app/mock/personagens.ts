@@ -3,11 +3,9 @@ import { Personagem } from "../models/personagem";
 export const PERSONAGENS: Personagem[] = [
   {
     id_personagem: 1,
-    nomeJogador: 'Yuji',
+    nome_jogador: 'Yuji',
     nome_personagem: 'Lightning',
-    raca: 'Humano',
-    classe: 'Archer',
-    alinhamento: 'Neutro',
+    id_alinhamento: 5,
     nivel: 1,
     experiencia: 0,
     iniciativa: 2,
@@ -86,15 +84,13 @@ export const PERSONAGENS: Personagem[] = [
       sobrevivencia: 0,
     },
 
-    inspiracao: 0
+    inspiracao: false
   }, {
     id_personagem: 2,
-    nomeJogador: 'Will',
+    nome_jogador: 'Will',
     nome_personagem: 'Magma',
     titulo: ', the Wise',
-    raca: 'Humano',
-    classe: 'Mage',
-    alinhamento: 'Caótico e Neutro',
+    id_alinhamento: 8,
     nivel: 1,
     experiencia: 0,
     iniciativa: 2,
@@ -173,14 +169,12 @@ export const PERSONAGENS: Personagem[] = [
       sobrevivencia: 0,
     },
 
-    inspiracao: 0
+    inspiracao: false
   }, {
     id_personagem: 3,
-    nomeJogador: 'Anya',
+    nome_jogador: 'Anya',
     nome_personagem: 'Bondman',
-    raca: 'Humano',
-    classe: 'Rogue',
-    alinhamento: 'Ordem e Bom',
+    id_alinhamento: 1,
     nivel: 1,
     experiencia: 0,
     iniciativa: 2,
@@ -259,6 +253,6 @@ export const PERSONAGENS: Personagem[] = [
       sobrevivencia: 0,
     },
 
-    inspiracao: 0
+    inspiracao: false
   }
 ];

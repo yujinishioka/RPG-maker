@@ -1,4 +1,4 @@
-<div *ngIf="personagem">
+<div *ngIf="personagem && alinhamento">
   <div *ngIf="personagem.titulo == ''">
     <h2>Detalhes de {{ personagem.nome_personagem | uppercase }}</h2>
   </div>
@@ -9,8 +9,9 @@
   <div>ID: {{ personagem.id_personagem }}</div>
   <div>Nível: {{ personagem.nivel }}</div>
   <div>Experiencia: {{ personagem.experiencia }}</div>
-  <button type="button" (click)="goBack()">Voltar</button>
+  <div>Alinhamento: {{ alinhamento.tipo }}</div>
   <a routerLink="/personagens/{{ personagem.id_personagem }}/editar">
     <button type="button">Editar</button>
   </a>
+  <button type="button" (click)="goBack()">Voltar</button>
 </div>

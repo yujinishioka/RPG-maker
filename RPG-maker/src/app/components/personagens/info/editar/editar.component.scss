@@ -1,3 +1,42 @@
-label {
-  margin: 10px;
+h2 {
+  margin-left: 7px;
+}
+
+.campo {
+  width: 15rem;
+  padding: 0.2rem;
+  margin-bottom: 7px;
+  margin-left: 10px;
+
+  input {
+    width: 11rem;
+    padding: 0.3rem;
+    border-radius: 4px;
+  }
+
+  select {
+    padding: 0.3rem;
+    border-radius: 4px;
+  }
+}
+
+#salvar, button {
+  margin-top: 7px;
+  background-color: #eee;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+
+  &:hover {
+    color: white;
+    background-color: #42545C;
+  }
+}
+
+#salvar {
+  margin-left: 74px;
+}
+
+button {
+  margin-left: 7px;
 }
