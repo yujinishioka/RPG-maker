@@ -1,17 +1,40 @@
 <div *ngIf="personagem && alinhamento">
-  <div *ngIf="personagem.titulo == ''">
-    <h2>Detalhes de {{ personagem.nome_personagem | uppercase }}</h2>
+  <div class="container">
+    <div *ngIf="personagem.titulo == ''">
+      <h2>Detalhes de {{ personagem.nome_personagem | uppercase }}</h2>
+    </div>
+
+    <div *ngIf="personagem.titulo">
+      <h2>Detalhes de {{ personagem.nome_personagem | uppercase }}, {{ personagem.titulo }}</h2>
+    </div>
+    <hr>
+
+    <div class="info">Nome: {{ personagem.nome_personagem}}</div>
+    <div class="info">ID: {{ personagem.id_personagem }}</div>
+    <div class="info">Nível: {{ personagem.nivel }}</div>
+    <div class="info">Experiencia: {{ personagem.experiencia }}</div>
+    <div class="info">Alinhamento: {{ alinhamento.tipo }}</div>
+
+    <table *ngIf="status.length > 0">
+      <thead>
+        <th>Ability</th>
+        <th>Valor</th>
+      </thead>
+      <tr *ngFor="let item of status">
+        <td class="align-right">{{ item.ability }}</td>
+        <td class="valor">{{ item.valor }}</td>
+      </tr>
+    </table>
+
+    <div *ngIf="status.length == 0" class="aviso">
+      <div class="box">
+        Não há informações de Status para exibir
+      </div>
+    </div>
+
+    <a routerLink="/personagens/{{ personagem.id_personagem }}/editar">
+      <button type="button" class="first-btn">Editar</button>
+    </a>
+    <button type="button" (click)="goBack()">Voltar</button>
   </div>
-  <div *ngIf="personagem.titulo">
-    <h2>Detalhes de {{ personagem.nome_personagem | uppercase }}, {{ personagem.titulo }}</h2>
-  </div>
-  <div>Nome: {{ personagem.nome_personagem}}</div>
-  <div>ID: {{ personagem.id_personagem }}</div>
-  <div>Nível: {{ personagem.nivel }}</div>
-  <div>Experiencia: {{ personagem.experiencia }}</div>
-  <div>Alinhamento: {{ alinhamento.tipo }}</div>
-  <a routerLink="/personagens/{{ personagem.id_personagem }}/editar">
-    <button type="button">Editar</button>
-  </a>
-  <button type="button" (click)="goBack()">Voltar</button>
 </div>

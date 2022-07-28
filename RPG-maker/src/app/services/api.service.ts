@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Alinhamento } from "../models/alinhamento";
 import { Personagem } from './../models/personagem';
 import { environment } from './../../environments/environment';
+import { Status } from "../models/status";
 
 @Injectable()
 export class ApiService {
@@ -36,6 +37,11 @@ export class ApiService {
 
   getAlinhamento(id:number): Observable<Alinhamento> {
     let response = this.http.get<Alinhamento>(`${this.baseUrl}/alinhamentos/${id}`);
+    return response;
+  }
+
+  getPersonagemStatus(id_personagem: number): Observable<Status[]> {
+    let response = this.http.get<Status[]>(`${this.baseUrl}/status/personagem/${id_personagem}`);
     return response;
   }
 }

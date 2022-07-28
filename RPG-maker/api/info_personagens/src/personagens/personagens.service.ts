@@ -29,6 +29,7 @@ export class PersonagensService {
     const personagem = new Personagem();
     personagem.nome_personagem = updatePersonagemDto.nome_personagem;
     personagem.titulo = updatePersonagemDto.titulo;
+    personagem.id_alinhamento = updatePersonagemDto.id_alinhamento;
     const aux = this.personagensRepository.update(id, personagem);
     return aux;
   }

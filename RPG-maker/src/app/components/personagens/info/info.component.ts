@@ -5,8 +5,8 @@ import { Location } from '@angular/common';
 import { ApiService } from './../../../services/api.service';
 import { Alinhamento } from '../../../models/alinhamento';
 import { Personagem } from '../../../models/personagem';
-import { PersonagemService } from '../../../services/personagem.service';
 import { mergeMap } from 'rxjs';
+import { Status } from 'src/app/models/status';
 
 @Component({
   selector: 'app-personagem-detalhes',
@@ -16,12 +16,12 @@ import { mergeMap } from 'rxjs';
 export class PersonagemInfoComponent implements OnInit {
 
   personagem!: Personagem;
+  status!: Status[];
   alinhamento!: Alinhamento;
 
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
-    private personagemService: PersonagemService,
     private location: Location,
   ) { }
 
@@ -31,19 +31,16 @@ export class PersonagemInfoComponent implements OnInit {
 
   }
 
-  getPersonagem(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.personagemService.getPersonagem(id)
-      .subscribe(personagem => this.personagem = personagem);
-  }
-
   getPersonagemFromAPI(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
 
     this.apiService.getPersonagem(id).pipe(mergeMap(personagem => {
       this.personagem = personagem;
       return this.apiService.getAlinhamento(personagem.id_alinhamento);
-    })).subscribe(alinhamento => this.alinhamento = alinhamento)
+    })
+    ).subscribe(alinhamento => this.alinhamento = alinhamento);
+
+    this.apiService.getPersonagemStatus(id).subscribe(status => this.status = status);
   }
 
   getAlinhamento(): void {

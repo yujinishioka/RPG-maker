@@ -9,6 +9,7 @@ import { DanoModule } from './dano/dano.module';
 import { ConjuracoesModule } from './conjuracoes/conjuracoes.module';
 import { AlinhamentosModule } from './alinhamentos/alinhamentos.module';
 import { PersonagensModule } from './personagens/personagens.module';
+import { StatusModule } from './status/status.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { PersonagensModule } from './personagens/personagens.module';
     ConjuracoesModule,
     AlinhamentosModule,
     PersonagensModule,
+    StatusModule,
   ],
   controllers: [AppController],
   providers: [AppService],

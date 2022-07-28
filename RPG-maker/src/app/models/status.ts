@@ -1,8 +1,8 @@
 export class Status {
-  forca!: number;
-  destreza!: number;
-  constituicao!: number;
-  inteligencia!: number;
-  sabedoria!: number;
-  carisma!: number;
+  id_status!: number;
+  ability!: number;
+  valor!: number;
+  id_personagem!: number;
+
+  constructor() {}
 }

@@ -19,7 +19,7 @@ export class Personagem {
   armadura!: number;
   vida!: number;
 
-  status!: Status;
+  status!: Status[];
   proficiencia!: number;
   salvaGuardaProficiencia!: SalvaGuardaProficiencia;
   salvaGuarda!: SalvaGuarda;

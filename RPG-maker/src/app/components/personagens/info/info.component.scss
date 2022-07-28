@@ -1,19 +1,66 @@
-button {
-  margin-top: 10px;
-  margin-left: 8px;
-  background-color: #eee;
-  padding: 0.5rem;
-  border-radius: 4px;
-  font-size: 1rem;
+.container {
+  margin-top: 5px;
+  margin-left: 10px;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  table {
+    margin-top: 7px;
+
+    th {
+      padding: 0.3rem 1rem;
+    }
+
+    td {
+      padding: 00.3rem 1rem;
+    }
+  }
+
+  .aviso {
+    color: red;
+    font-weight: bold;
+
+    .box {
+      margin-top: 7px;
+      width: 21rem;
+      padding: 0.5rem;
+      border: 1px solid gray;
+    }
+  }
+
+  .align-right {
+    text-align: right;
+  }
+
+  button {
+    margin-top: 15px;
+    margin-left: 10px;
+    background-color: #eee;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+
+    &.first-btn {
+      margin-left: 40px;
+    }
+
+    &:hover {
+    color: white;
+    background-color: #42545C;
+    }
+
+    &:disabled {
+    background-color: #eee;
+    color: #ccc;
+    cursor: auto;
+    }
+  }
 }
 
-button:hover {
-  color: white;
-  background-color: #42545C;
-}
-
-button:disabled {
-  background-color: #eee;
-  color: #ccc;
-  cursor: auto;
-}
