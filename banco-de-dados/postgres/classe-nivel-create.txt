@@ -1,0 +1,156 @@
+/* Tabelas de Classe-Nivel */
+
+/* classe_arqueiro */
+/* classe_barbaro */
+/* classe_bruxo */
+/* classe_ladino */
+/* classe_lutador */
+/* classe_mago */
+/* classe_monge */
+/* classe_paladino */
+/* classe_spellcaster */
+
+/* Tabelas */
+
+/* Arqueiro */
+
+create table if not exists classe_arqueiro(
+	id_arqueiro int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	spells numeric (4) not null,
+	spell_slots_lv1 numeric (3) not null,
+	spell_slots_lv2 numeric (3) not null,
+	spell_slots_lv3 numeric (3) not null,
+	spell_slots_lv4 numeric (3) not null,
+	spell_slots_lv5 numeric (3) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+/* Barbaro */
+
+create table if not exists classe_barbaro(
+	id_barbaro int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	rages numeric (3) not null,
+	rage_dmg numeric (3) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+/* Bruxo */
+
+create table if not exists classe_bruxo(
+	id_bruxo int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	cantrips numeric (3) not null,
+	spells numeric (4) not null,
+	spell_slots numeric (3) not null,
+	slot_level numeric (3) not null,
+	invocation numeric (3) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+/* Ladino */
+
+create table if not exists classe_ladino(
+	id_ladino int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	sneak_attack varchar (50) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+/* Lutador */
+
+create table if not exists classe_lutador(
+	id_lutador int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+/* Mago */
+
+create table if not exists classe_mago(
+	id_mago int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	cantrips numeric (3) not null,
+	spell_known_lv1 numeric (3) not null,
+	spell_known_lv2 numeric (3) not null,
+	spell_known_lv3 numeric (3) not null,
+	spell_known_lv4 numeric (3) not null,
+	spell_known_lv5 numeric (3) not null,
+	spell_known_lv6 numeric (3) not null,
+	spell_known_lv7 numeric (3) not null,
+	spell_known_lv8 numeric (3) not null,
+	spell_known_lv9 numeric (3) not null,
+	spell_slots_lv1 numeric (3) not null,
+	spell_slots_lv2 numeric (3) not null,
+	spell_slots_lv3 numeric (3) not null,
+	spell_slots_lv4 numeric (3) not null,
+	spell_slots_lv5 numeric (3) not null,
+	spell_slots_lv6 numeric (3) not null,
+	spell_slots_lv7 numeric (3) not null,
+	spell_slots_lv8 numeric (3) not null,
+	spell_slots_lv9 numeric (3) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+/* Monge */
+
+create table if not exists classe_monge(
+	id_monge int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	martial_arts varchar (50) not null,
+	ki numeric (3) not null,
+	unarmored_movement numeric (4) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+/* Paladino */
+
+create table if not exists classe_paladino(
+	id_paladino int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	spells numeric (4) not null,
+	spell_slots_lv1 numeric (3) not null,
+	spell_slots_lv2 numeric (3) not null,
+	spell_slots_lv3 numeric (3) not null,
+	spell_slots_lv4 numeric (3) not null,
+	spell_slots_lv5 numeric (3) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+/* Bardo, Clérigo, Druida, Feiticeiro */
+
+create table if not exists classe_spellcaster(
+	id_spellcaster int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	cantrips numeric (3) not null,
+	spells numeric (4) not null,
+	spell_slots_lv1 numeric (3) not null,
+	spell_slots_lv2 numeric (3) not null,
+	spell_slots_lv3 numeric (3) not null,
+	spell_slots_lv4 numeric (3) not null,
+	spell_slots_lv5 numeric (3) not null,
+	spell_slots_lv6 numeric (3) not null,
+	spell_slots_lv7 numeric (3) not null,
+	spell_slots_lv8 numeric (3) not null,
+	spell_slots_lv9 numeric (3) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);

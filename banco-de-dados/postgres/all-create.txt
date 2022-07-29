@@ -1,0 +1,1451 @@
+/* Todo código de banco de dados */
+
+/* create */
+
+create table if not exists alinhamento(
+	id_alinhamento int generated always as identity ( start with 1 increment by 1 ) primary key,
+	tipo varchar(50) not null,
+	explicacao varchar(5000) not null
+);
+
+create table if not exists personagem(
+	id_personagem int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nome_jogador varchar(100) not null,
+	nome_personagem varchar(100) not null,
+	titulo varchar(200),
+	nivel numeric(4) not null,
+	experiencia numeric(10, 2) not null,
+	iniciativa numeric(4) not null,
+	deslocamento numeric(8) not null,
+	armadura numeric(4) not null,
+	vida numeric(8) not null,
+	proficiencia numeric(4) not null,
+	inspiracao boolean,
+	idade varchar(50),
+	altura varchar(50),
+	peso varchar(50),
+	cor_olhos varchar(50),
+	cor_pele varchar(50),
+	cor_cabelo varchar(50),
+	personalidade varchar(2000),
+	ideais varchar(2000),
+	vinculos varchar(2000),
+	fraquezas varchar(2000),
+	caracteristicas varchar(2000),
+	outras_proficiencias varchar(2000),
+	aliados varchar(2000),
+	historia_personagem varchar(2000),
+	id_alinhamento int not null,
+	foreign key(id_alinhamento)
+		references alinhamento(id_alinhamento)
+);
+
+create table if not exists status(
+	id_status int generated always as identity ( start with 1 increment by 1 ) primary key,
+	ability varchar (50) not null,
+	valor numeric (4) not null,
+	id_personagem int not null,
+	foreign key(id_personagem)
+		references personagem(id_personagem)
+);
+
+create table if not exists classe(
+	id_classe int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nome varchar (100) not null,
+	descricao varchar (5000)
+);
+
+create table if not exists classe_arqueiro(
+	id_arqueiro int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	spells numeric (4) not null,
+	spell_slots_lv1 numeric (3) not null,
+	spell_slots_lv2 numeric (3) not null,
+	spell_slots_lv3 numeric (3) not null,
+	spell_slots_lv4 numeric (3) not null,
+	spell_slots_lv5 numeric (3) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+create table if not exists classe_barbaro(
+	id_barbaro int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	rages numeric (3) not null,
+	rage_dmg numeric (3) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+create table if not exists classe_bruxo(
+	id_bruxo int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	cantrips numeric (3) not null,
+	spells numeric (4) not null,
+	spell_slots numeric (3) not null,
+	slot_level numeric (3) not null,
+	invocation numeric (3) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+create table if not exists classe_ladino(
+	id_ladino int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	sneak_attack varchar (50) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+create table if not exists classe_lutador(
+	id_lutador int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+create table if not exists classe_mago(
+	id_mago int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	cantrips numeric (3) not null,
+	spell_known_lv1 numeric (3) not null,
+	spell_known_lv2 numeric (3) not null,
+	spell_known_lv3 numeric (3) not null,
+	spell_known_lv4 numeric (3) not null,
+	spell_known_lv5 numeric (3) not null,
+	spell_known_lv6 numeric (3) not null,
+	spell_known_lv7 numeric (3) not null,
+	spell_known_lv8 numeric (3) not null,
+	spell_known_lv9 numeric (3) not null,
+	spell_slots_lv1 numeric (3) not null,
+	spell_slots_lv2 numeric (3) not null,
+	spell_slots_lv3 numeric (3) not null,
+	spell_slots_lv4 numeric (3) not null,
+	spell_slots_lv5 numeric (3) not null,
+	spell_slots_lv6 numeric (3) not null,
+	spell_slots_lv7 numeric (3) not null,
+	spell_slots_lv8 numeric (3) not null,
+	spell_slots_lv9 numeric (3) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+create table if not exists classe_monge(
+	id_monge int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	martial_arts varchar (50) not null,
+	ki numeric (3) not null,
+	unarmored_movement numeric (4) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+create table if not exists classe_paladino(
+	id_paladino int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	spells numeric (4) not null,
+	spell_slots_lv1 numeric (3) not null,
+	spell_slots_lv2 numeric (3) not null,
+	spell_slots_lv3 numeric (3) not null,
+	spell_slots_lv4 numeric (3) not null,
+	spell_slots_lv5 numeric (3) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+create table if not exists classe_spellcaster(
+	id_spellcaster int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nivel_classe numeric (3) not null,
+	cantrips numeric (3) not null,
+	spells numeric (4) not null,
+	spell_slots_lv1 numeric (3) not null,
+	spell_slots_lv2 numeric (3) not null,
+	spell_slots_lv3 numeric (3) not null,
+	spell_slots_lv4 numeric (3) not null,
+	spell_slots_lv5 numeric (3) not null,
+	spell_slots_lv6 numeric (3) not null,
+	spell_slots_lv7 numeric (3) not null,
+	spell_slots_lv8 numeric (3) not null,
+	spell_slots_lv9 numeric (3) not null,
+	id_classe int not null,
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+create table if not exists personagem_classe(
+	id_pclasse int generated always as identity ( start with 1 increment by 1 ) primary key,
+	id_personagem int not null,
+	id_classe int not null,
+	foreign key (id_personagem)
+		references personagem(id_personagem),
+	foreign key (id_classe)
+		references classe(id_classe)
+);
+
+create table if not exists tipo_dano(
+	id_tipo_dano int generated always as identity ( start with 1 increment by 1 ) primary key,
+	tipo varchar (50) not null
+);
+
+create table if not exists dano(
+	id_dano int generated always as identity ( start with 1 increment by 1 ) primary key,
+	total numeric(3) not null,
+	dado varchar(4) not null,
+	bonus numeric(4) not null
+);
+
+create table if not exists conjuracao(
+	id_conjuracao int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nome varchar(100) unique not null,
+	nivel varchar(50) not null,
+	escola varchar(50) not null,
+	casting varchar(50) not null,
+	range varchar(50) not null,
+	ade varchar(50) not null,
+	componente varchar(10) not null,
+	descricao varchar(10000),
+	id_dano int not null,
+	foreign key (id_dano)
+		references dano(id_dano)
+);
+
+create table if not exists conjuracao_tipo_dano(
+	id_ctd int generated always as identity ( start with 1 increment by 1 ) primary key,
+	id_conjuracao int not null,
+	id_tipo_dano int not null,
+	foreign key (id_conjuracao)
+		references conjuracao(id_conjuracao),
+	foreign key (id_tipo_dano)
+		references tipo_dano(id_tipo_dano)
+);
+
+create table if not exists personagem_conjuracao(
+	id_pc int generated always as identity ( start with 1 increment by 1 ) primary key,
+	id_personagem int not null,
+	id_conjuracao int not null,
+	foreign key (id_personagem)
+		references personagem(id_personagem),
+	foreign key (id_conjuracao)
+		references conjuracao(id_conjuracao)
+);
+
+create table if not exists ataque(
+	id_ataque int generated always as identity ( start with 1 increment by 1 ) primary key,
+	nome varchar(100) not null,
+	range varchar(50) not null,
+	ade varchar(50) not null,
+	descricao varchar(2000),
+	id_dano int not null,
+	foreign key (id_dano)
+		references dano(id_dano)
+);
+
+create table if not exists ataque_tipo_dano(
+	id_atd int generated always as identity ( start with 1 increment by 1 ) primary key,
+	id_ataque int not null,
+	id_tipo_dano int not null,
+	foreign key (id_ataque)
+		references ataque(id_ataque),
+	foreign key (id_tipo_dano)
+		references tipo_dano(id_tipo_dano)
+);
+
+create table if not exists personagem_ataque(
+	id_pa int generated always as identity ( start with 1 increment by 1 ) primary key,
+	id_personagem int not null,
+	id_ataque int not null,
+	foreign key (id_personagem)
+		references personagem(id_personagem),
+	foreign key (id_ataque)
+		references ataque(id_ataque)
+);
+
+/* insert */
+
+
+/* Alinhamentos */
+
+insert into alinhamento(tipo, explicacao)
+values('Ordeiro e Bom', 
+	'Age com compaixão e sempre com honra e senso de dever. Porém, personagens ordeiros e bons vão se arrepender ao fazerem qualquer ação que acreditem conflitar com o seu código, mesmo que em prol do bem maior. Estes personagens incluem nobres cavaleiros, paladinos e muitos anões, incluem também dragões dourados.');
+
+insert into alinhamento(tipo, explicacao)
+values('Neutro e Bom', 
+	'Age de forma altruísta, sem se importar com os decretos de leis, regras comunitárias e tradições. Não vê problemas ao cooperar com oficiais da lei, mas não se veem presos a eles. Caso a oportunidade de fazer o bem exija distorcer ou violar as regras, eles não sofrem o mesmo conflito interno que os personagens ordeiros e bons.');
+
+insert into alinhamento(tipo, explicacao)
+values('Caótico e Bom', 
+	'Faz o que for necessário para mudar as coisas para melhor, desdenha as organizações burocráticas que impedem as melhorias sociais e valorizam a liberdade individual, não apenas para si mesmo, mas para todas as pessoas. Geralmente possuem boas intenções, mas seus métodos são desorganizados e, frequentemente, destoam do restante da sociedade.');
+
+insert into alinhamento(tipo, explicacao)
+values('Ordeiro e Neutro', 
+	'Acredita fortemente no espírito das leis como a honra, a ordem, as regras e as tradições, seguem um código pessoal em adição a, ou mesmo preferindo a, algum código determinado por uma autoridade benevolente. Personagens ordeiros e neutros incluem um soldado que sempre segue ordens, um juiz que adere impiedosamente à lei literal, e um monge disciplinado.');
+
+insert into alinhamento(tipo, explicacao)
+values('Verdadeiro Neutro', 
+	'Não se sente fortemente inclinado a nenhum alinhamento e nem trabalha em prol do equilíbrio deles. Os druidas frequentemente seguem este caminho em prol do equilíbrio.');
+
+insert into alinhamento(tipo, explicacao)
+values('Caótico e Neutro', 
+	'Individualista que segue apenas a sua própria vontade e geralmente não se importa com as regras e nem com as tradições. Embora os personagens caóticos e neutros promovam os ideais de liberdade, é a sua liberdade individual que vem em primeiro lugar, bem e mal ficam em segundo plano em relação a sua necessidade de se sentirem livres.');
+
+insert into alinhamento(tipo, explicacao)
+values('Ordeiro e Mau', 
+	'Vê um sistema bem ordenado como sendo mais fácil de explorar do que de seguir. Exemplos deste alinhamento inclui tiranos, diabos, oficiais corruptos e mercenários que seguem um código de conduta restrito.');
+
+insert into alinhamento(tipo, explicacao)
+values('Neutro e Mau', 
+	'Egoísta e não possui nenhuma ressalva em se voltar contra seus aliados. Eles geralmente buscam aliados para avançar em seus objetivos pessoais. Não sente nenhuma culpa em ferir outras pessoas para conseguirem o que quer, mas não busca promover a carnificina ou destruição quando isso não lhe trouxer um benefício direto.');
+
+insert into alinhamento(tipo, explicacao)
+values('Caótico e Mau', 
+	'Não respeita regras, a vida de terceiros ou qualquer coisa além de seus próprios desejos, que são geralmente egoístas e cruéis. Eles supervalorizam a liberdade individual, mas não se importam com as vidas ou com a liberdade de terceiros. Não funcionam bem em grupos pois odeiam receber ordens e não se comportam bem a não ser que não tenham outra alternativa.');
+
+/* Personagem */
+
+insert into personagem(
+	nome_jogador, 
+	nome_personagem, 
+	titulo, 
+	nivel, 
+	experiencia, 
+	iniciativa, 
+	deslocamento, 
+	armadura, 
+	vida, 
+	proficiencia, 
+	inspiracao, 
+	idade, 
+	altura, 
+	peso, 
+	cor_olhos, 
+	cor_pele, 
+	cor_cabelo, 
+	personalidade, 
+	ideais, 
+	vinculos,
+	fraquezas,
+	caracteristicas,
+	outras_proficiencias,
+	aliados,
+	historia_personagem,
+	id_alinhamento
+)
+values(
+	'Yuji', 
+	'Ling Tai', 
+	'o Sabio', 
+	1, 
+	0, 
+	10, 
+	7, 
+	10, 
+	10, 
+	2, 
+	false, 
+	'21', 
+	'1.70', 
+	'72', 
+	'Preto', 
+	'Branco', 
+	'Preto', 
+	'Não Informado', 
+	'Não Informado', 
+	'Não Informado',
+	'Não Informado',
+	'Não Informado',
+	'Não Informado',
+	'Não Informado',
+	'Não Informado',
+	2
+);
+
+insert into personagem(
+	nome_jogador, 
+	nome_personagem, 
+	titulo, 
+	nivel, 
+	experiencia, 
+	iniciativa, 
+	deslocamento, 
+	armadura, 
+	vida, 
+	proficiencia, 
+	inspiracao, 
+	idade, 
+	altura, 
+	peso, 
+	cor_olhos, 
+	cor_pele, 
+	cor_cabelo, 
+	personalidade, 
+	ideais, 
+	vinculos,
+	fraquezas,
+	caracteristicas,
+	outras_proficiencias,
+	aliados,
+	historia_personagem,
+	id_alinhamento
+)
+values(
+	'Yuji', 
+	'Diesa Torunn', 
+	'', 
+	1, 
+	0, 
+	10, 
+	7, 
+	13, 
+	14, 
+	2, 
+	false, 
+	'30', 
+	'1.15', 
+	'79', 
+	'Preto', 
+	'Branco', 
+	'Castanho', 
+	'Não Informado', 
+	'Não Informado', 
+	'Não Informado',
+	'Não Informado',
+	'Não Informado',
+	'Não Informado',
+	'Não Informado',
+	'Não Informado',
+	3
+);
+
+/* resetar lista de personagens */
+/* delete from personagem; */
+
+/* Status */
+
+insert into status(ability, valor, id_personagem)
+values('Forca', 16, 1);
+
+insert into status(ability, valor, id_personagem)
+values('Destreza', 18, 1);
+
+insert into status(ability, valor, id_personagem)
+values('Constituicao', 19, 1);
+
+insert into status(ability, valor, id_personagem)
+values('Inteligencia', 18, 1);
+
+insert into status(ability, valor, id_personagem)
+values('Sabedoria', 11, 1);
+
+insert into status(ability, valor, id_personagem)
+values('Carisma', 16, 1);
+
+insert into status(ability, valor, id_personagem)
+values('Forca', 20, 2);
+
+insert into status(ability, valor, id_personagem)
+values('Destreza', 14, 2);
+
+insert into status(ability, valor, id_personagem)
+values('Constituicao', 18, 2);
+
+insert into status(ability, valor, id_personagem)
+values('Inteligencia', 14, 2);
+
+insert into status(ability, valor, id_personagem)
+values('Sabedoria', 15, 2);
+
+insert into status(ability, valor, id_personagem)
+values('Carisma', 15, 2);
+
+/* Classe */
+
+insert into classe (nome)
+values('Arqueiro');
+
+insert into classe (nome)
+values('Bárbaro');
+
+insert into classe (nome)
+values('Bardo');
+
+insert into classe (nome)
+values('Bruxo');
+
+insert into classe (nome)
+values('Clérigo');
+
+insert into classe (nome)
+values('Druida');
+
+insert into classe (nome)
+values('Feiticeiro');
+
+insert into classe (nome)
+values('Ladino');
+
+insert into classe (nome)
+values('Lutador');
+
+insert into classe (nome)
+values('Mago');
+
+insert into classe (nome)
+values('Monge');
+
+insert into classe (nome)
+values('Paladino');
+
+/* Classe-Nivel */
+
+/* Arqueiro */
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(1, 0, 0, 0, 0, 0, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(2, 2, 2, 0, 0, 0, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(3, 3, 3, 0, 0, 0, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(4, 3, 3, 0, 0, 0, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(5, 4, 4, 2, 0, 0, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(6, 4, 4, 2, 0, 0, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(7, 5, 4, 3, 0, 0, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(8, 5, 4, 3, 0, 0, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(9, 6, 4, 3, 2, 0, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(10, 6, 4, 3, 2, 0, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(11, 7, 4, 3, 3, 0, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(12, 7, 4, 3, 3, 0, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(13, 8, 4, 3, 3, 1, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(14, 8, 4, 3, 3, 1, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(15, 9, 4, 3, 3, 2, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(16, 9, 4, 3, 3, 2, 0, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(17, 10, 4, 3, 3, 3, 1, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(18, 10, 4, 3, 3, 3, 1, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(19, 11, 4, 3, 3, 3, 2, 1);
+
+insert into classe_arqueiro (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(20, 11, 4, 3, 3, 3, 2, 1);
+
+/* Bárbaro */
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(1, 2, 2, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(2, 2, 2, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(3, 3, 2, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(4, 3, 2, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(5, 3, 2, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(6, 4, 2, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(7, 4, 2, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(8, 4, 2, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(9, 4, 3, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(10, 4, 3, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(11, 4, 3, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(12, 5, 3, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(13, 5, 3, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(14, 5, 3, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(15, 5, 3, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(16, 5, 4, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(17, 6, 4, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(18, 6, 4, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(19, 6, 4, 2);
+
+insert into classe_barbaro (nivel_classe, rages, rage_dmg, id_classe)
+values(20, 999, 4, 2);
+
+/* Bardo */
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(1, 2, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(2, 2, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(3, 2, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(4, 3, 7, 4, 3, 0, 0, 0, 0, 0, 0, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(5, 3, 8, 4, 3, 2, 0, 0, 0, 0, 0, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(6, 3, 9, 4, 3, 3, 0, 0, 0, 0, 0, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(7, 3, 10, 4, 3, 3, 1, 0, 0, 0, 0, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(8, 3, 11, 4, 3, 3, 2, 0, 0, 0, 0, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(9, 3, 12, 4, 3, 3, 3, 1, 0, 0, 0, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(10, 4, 14, 4, 3, 3, 3, 2, 0, 0, 0, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(11, 4, 15, 4, 3, 3, 3, 2, 1, 0, 0, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(12, 4, 15, 4, 3, 3, 3, 2, 1, 0, 0, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(13, 4, 16, 4, 3, 3, 3, 2, 1, 1, 0, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(14, 4, 18, 4, 3, 3, 3, 2, 1, 1, 0, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(15, 4, 19, 4, 3, 3, 3, 2, 1, 1, 1, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(16, 4, 19, 4, 3, 3, 3, 2, 1, 1, 1, 0, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(17, 4, 20, 4, 3, 3, 3, 2, 1, 1, 1, 1, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(18, 4, 22, 4, 3, 3, 3, 3, 1, 1, 1, 1, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(19, 4, 22, 4, 3, 3, 3, 3, 2, 1, 1, 1, 3);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(20, 4, 22, 4, 3, 3, 3, 3, 2, 2, 1, 1, 3);
+
+/* Bruxo */
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(1, 2, 2, 1, 1, 0, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(2, 2, 3, 2, 1, 2, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(3, 2, 4, 2, 2, 2, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(4, 3, 5, 2, 2, 2, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(5, 3, 6, 2, 3, 3, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(6, 3, 7, 2, 3, 3, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(7, 3, 8, 2, 4, 4, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(8, 3, 9, 2, 4, 4, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(9, 3, 10, 2, 5, 5, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(10, 4, 10, 2, 5, 5, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(11, 4, 11, 3, 5, 5, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(12, 4, 11, 3, 5, 6, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(13, 4, 12, 3, 5, 6, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(14, 4, 12, 3, 5, 6, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(15, 4, 13, 3, 5, 7, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(16, 4, 13, 3, 5, 7, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(17, 4, 14, 4, 5, 7, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(18, 4, 14, 4, 5, 8, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(19, 4, 15, 4, 5, 8, 4);
+
+insert into classe_bruxo (nivel_classe, cantrips, spells, spell_slots, slot_level, invocation, id_classe)
+values(20, 4, 15, 4, 5, 8, 4);
+
+/* Clérigo */
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(1, 3, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(2, 3, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(3, 3, 3, 4, 2, 0, 0, 0, 0, 0, 0, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(4, 4, 4, 4, 3, 0, 0, 0, 0, 0, 0, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(5, 4, 5, 4, 3, 2, 0, 0, 0, 0, 0, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(6, 4, 6, 4, 3, 3, 0, 0, 0, 0, 0, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(7, 4, 7, 4, 3, 3, 1, 0, 0, 0, 0, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(8, 4, 8, 4, 3, 3, 2, 0, 0, 0, 0, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(9, 4, 9, 4, 3, 3, 3, 1, 0, 0, 0, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(10, 5, 10, 4, 3, 3, 3, 2, 0, 0, 0, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(11, 5, 11, 4, 3, 3, 3, 2, 1, 0, 0, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(12, 5, 12, 4, 3, 3, 3, 2, 1, 0, 0, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(13, 5, 13, 4, 3, 3, 3, 2, 1, 1, 0, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(14, 5, 14, 4, 3, 3, 3, 2, 1, 1, 0, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(15, 5, 15, 4, 3, 3, 3, 2, 1, 1, 1, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(16, 5, 16, 4, 3, 3, 3, 2, 1, 1, 1, 0, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(17, 5, 17, 4, 3, 3, 3, 2, 1, 1, 1, 1, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(18, 5, 18, 4, 3, 3, 3, 3, 1, 1, 1, 1, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(19, 5, 19, 4, 3, 3, 3, 3, 2, 1, 1, 1, 5);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(20, 5, 20, 4, 3, 3, 3, 3, 2, 2, 1, 1, 5);
+
+/* Druida */
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(1, 2, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(2, 2, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(3, 2, 3, 4, 2, 0, 0, 0, 0, 0, 0, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(4, 3, 4, 4, 3, 0, 0, 0, 0, 0, 0, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(5, 3, 5, 4, 3, 2, 0, 0, 0, 0, 0, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(6, 3, 6, 4, 3, 3, 0, 0, 0, 0, 0, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(7, 3, 7, 4, 3, 3, 1, 0, 0, 0, 0, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(8, 3, 8, 4, 3, 3, 2, 0, 0, 0, 0, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(9, 3, 9, 4, 3, 3, 3, 1, 0, 0, 0, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(10, 4, 10, 4, 3, 3, 3, 2, 0, 0, 0, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(11, 4, 11, 4, 3, 3, 3, 2, 1, 0, 0, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(12, 4, 12, 4, 3, 3, 3, 2, 1, 0, 0, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(13, 4, 13, 4, 3, 3, 3, 2, 1, 1, 0, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(14, 4, 14, 4, 3, 3, 3, 2, 1, 1, 0, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(15, 4, 15, 4, 3, 3, 3, 2, 1, 1, 1, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(16, 4, 16, 4, 3, 3, 3, 2, 1, 1, 1, 0, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(17, 4, 17, 4, 3, 3, 3, 2, 1, 1, 1, 1, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(18, 4, 18, 4, 3, 3, 3, 3, 1, 1, 1, 1, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(19, 4, 19, 4, 3, 3, 3, 3, 2, 1, 1, 1, 6);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(20, 4, 20, 4, 3, 3, 3, 3, 2, 2, 1, 1, 6);
+
+/* Feiticeiro */
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(1, 4, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(2, 4, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(3, 4, 4, 4, 2, 0, 0, 0, 0, 0, 0, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(4, 5, 5, 4, 3, 0, 0, 0, 0, 0, 0, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(5, 5, 6, 4, 3, 2, 0, 0, 0, 0, 0, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(6, 5, 7, 4, 3, 3, 0, 0, 0, 0, 0, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(7, 5, 8, 4, 3, 3, 1, 0, 0, 0, 0, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(8, 5, 9, 4, 3, 3, 2, 0, 0, 0, 0, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(9, 5, 10, 4, 3, 3, 3, 1, 0, 0, 0, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(10, 6, 11, 4, 3, 3, 3, 2, 0, 0, 0, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(11, 6, 12, 4, 3, 3, 3, 2, 1, 0, 0, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(12, 6, 12, 4, 3, 3, 3, 2, 1, 0, 0, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(13, 6, 13, 4, 3, 3, 3, 2, 1, 1, 0, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(14, 6, 13, 4, 3, 3, 3, 2, 1, 1, 0, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(15, 6, 14, 4, 3, 3, 3, 2, 1, 1, 1, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(16, 6, 14, 4, 3, 3, 3, 2, 1, 1, 1, 0, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(17, 6, 15, 4, 3, 3, 3, 2, 1, 1, 1, 1, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(18, 6, 15, 4, 3, 3, 3, 3, 1, 1, 1, 1, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(19, 6, 15, 4, 3, 3, 3, 3, 2, 1, 1, 1, 7);
+
+insert into classe_spellcaster (nivel_classe, cantrips, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(20, 6, 15, 4, 3, 3, 3, 3, 2, 2, 1, 1, 7);
+
+/* Ladino */
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(1, '1d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(2, '1d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(3, '2d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(4, '2d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(5, '3d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(6, '3d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(7, '4d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(8, '4d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(9, '5d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(10, '5d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(11, '6d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(12, '6d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(13, '7d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(14, '7d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(15, '8d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(16, '8d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(17, '9d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(18, '9d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(19, '10d6', 8);
+
+insert into classe_ladino (nivel_classe, sneak_attack, id_classe)
+values(20, '10d6', 8);
+
+/* Lutador */
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(1, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(2, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(3, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(4, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(5, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(6, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(7, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(8, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(9, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(10, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(11, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(12, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(13, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(14, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(15, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(16, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(17, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(18, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(19, 9);
+
+insert into classe_lutador (nivel_classe, id_classe)
+values(20, 9);
+
+/* Mago */
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(1, 3, 6, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(2, 3, 8, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(3, 3, 8, 2, 0, 0, 0, 0, 0, 0, 0, 4, 2, 0, 0, 0, 0, 0, 0, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(4, 4, 8, 4, 0, 0, 0, 0, 0, 0, 0, 4, 3, 0, 0, 0, 0, 0, 0, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(5, 4, 8, 4, 2, 0, 0, 0, 0, 0, 0, 4, 3, 2, 0, 0, 0, 0, 0, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(6, 4, 8, 4, 4, 0, 0, 0, 0, 0, 0, 4, 3, 3, 0, 0, 0, 0, 0, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(7, 4, 8, 4, 4, 2, 0, 0, 0, 0, 0, 4, 3, 3, 1, 0, 0, 0, 0, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(8, 4, 8, 4, 4, 4, 0, 0, 0, 0, 0, 4, 3, 3, 2, 0, 0, 0, 0, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(9, 4, 8, 4, 4, 4, 2, 0, 0, 0, 0, 4, 3, 3, 3, 1, 0, 0, 0, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(10, 5, 8, 4, 4, 4, 4, 0, 0, 0, 0, 4, 3, 3, 3, 2, 0, 0, 0, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(11, 5, 8, 4, 4, 4, 4, 2, 0, 0, 0, 4, 3, 3, 3, 2, 1, 0, 0, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(12, 5, 8, 4, 4, 4, 4, 4, 0, 0, 0, 4, 3, 3, 3, 2, 1, 0, 0, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(13, 5, 8, 4, 4, 4, 4, 4, 2, 0, 0, 4, 3, 3, 3, 2, 1, 1, 0, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(14, 5, 8, 4, 4, 4, 4, 4, 4, 0, 0, 4, 3, 3, 3, 2, 1, 1, 0, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(15, 5, 8, 4, 4, 4, 4, 4, 4, 2, 0, 4, 3, 3, 3, 2, 1, 1, 1, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(16, 5, 8, 4, 4, 4, 4, 4, 4, 4, 0, 4, 3, 3, 3, 2, 1, 1, 1, 0, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(17, 5, 8, 4, 4, 4, 4, 4, 4, 4, 2, 4, 3, 3, 3, 2, 1, 1, 1, 1, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(18, 5, 8, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 1, 1, 1, 1, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(19, 5, 8, 4, 4, 4, 4, 4, 4, 4, 6, 4, 3, 3, 3, 3, 2, 1, 1, 1, 10);
+
+insert into classe_mago (nivel_classe, cantrips, spell_known_lv1 , spell_known_lv2, spell_known_lv3, spell_known_lv4, spell_known_lv5, spell_known_lv6, 
+spell_known_lv7, spell_known_lv8, spell_known_lv9, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, spell_slots_lv6, 
+spell_slots_lv7, spell_slots_lv8, spell_slots_lv9, id_classe)
+values(20, 5, 8, 4, 4, 4, 4, 4, 4, 4, 8, 4, 3, 3, 3, 3, 2, 2, 1, 1, 10);
+
+/* Monge */
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(1, '1d4', 0, 0, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(2, '1d4', 2, 2, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(3, '1d4', 3, 2, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(4, '1d4', 4, 2, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(5, '1d6', 5, 2, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(6, '1d6', 6, 3, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(7, '1d6', 7, 3, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(8, '1d6', 8, 3, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(9, '1d6', 9, 3, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(10, '1d6', 10, 4, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(11, '1d8', 11, 4, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(12, '1d8', 12, 4, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(13, '1d8', 13, 4, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(14, '1d8', 14, 5, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(15, '1d8', 15, 5, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(16, '1d8', 16, 5, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(17, '1d10', 17, 5, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(18, '1d10', 18, 6, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(19, '1d10', 19, 6, 11);
+
+insert into classe_monge (nivel_classe, martial_arts, ki, unarmored_movement, id_classe)
+values(20, '1d10', 20, 6, 11);
+
+/* Paladino */
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(1, 0, 0, 0, 0, 0, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(2, 1, 2, 0, 0, 0, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(3, 1, 3, 0, 0, 0, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(4, 2, 3, 0, 0, 0, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(5, 2, 4, 2, 0, 0, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(6, 3, 4, 2, 0, 0, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(7, 3, 4, 3, 0, 0, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(8, 4, 4, 3, 0, 0, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(9, 4, 4, 3, 2, 0, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(10, 5, 4, 3, 2, 0, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(11, 5, 4, 3, 3, 0, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(12, 6, 4, 3, 3, 0, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(13, 6, 4, 3, 3, 1, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(14, 7, 4, 3, 3, 1, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(15, 7, 4, 3, 3, 2, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(16, 8, 4, 3, 3, 2, 0, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(17, 8, 4, 3, 3, 3, 1, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(18, 9, 4, 3, 3, 3, 1, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(19, 9, 4, 3, 3, 3, 2, 12);
+
+insert into classe_paladino (nivel_classe, spells, spell_slots_lv1, spell_slots_lv2, spell_slots_lv3, spell_slots_lv4, spell_slots_lv5, id_classe)
+values(20, 10, 4, 3, 3, 3, 2, 12);
+
+/* Personagem Classe: Associativa */
+
+/* Tipo de Dano */
+
+insert into tipo_dano(tipo)
+values('None');
+
+insert into tipo_dano(tipo)
+values('Acid');
+
+insert into tipo_dano(tipo)
+values('Bludgeoning');
+
+insert into tipo_dano(tipo)
+values('Cold');
+
+insert into tipo_dano(tipo)
+values('Fire');
+
+insert into tipo_dano(tipo)
+values('Force');
+
+insert into tipo_dano(tipo)
+values('Lightning');
+
+insert into tipo_dano(tipo)
+values('Necrotic');
+
+insert into tipo_dano(tipo)
+values('Piercing');
+
+insert into tipo_dano(tipo)
+values('Poison');
+
+insert into tipo_dano(tipo)
+values('Psychic');
+
+insert into tipo_dano(tipo)
+values('Radiant');
+
+insert into tipo_dano(tipo)
+values('Slashing');
+
+insert into tipo_dano(tipo)
+values('Thunder');
+
+insert into tipo_dano(tipo)
+values('Healing');
+
+/* Dano */
+
+insert into dano(total, dado, bonus)
+values(0, 'd0', 0);
+
+insert into dano(total, dado, bonus)
+values(1, 'd6', 0);
+
+/* Conjuração */
+
+insert into conjuracao(nome, nivel, escola, casting, range, ade, componente, descricao, id_dano)
+values('Acid Splash v1', 
+	'cantrip', 
+	'Conjuration', 
+	'1 action', 
+	'60 feet', 
+	'3x3', 
+	'V, S', 
+	'Você lança uma bolha de ácido. Escolha uma criatura que você possa ver e esteja dentro do alcance, se houver outras ao lado ambas devem ser bem sucedidas à um dado de Destreza ou levará 1d6 de dano ácido', 
+	2
+);
+
+/* Conjuração Tipo Dano: Associativa */
+
+insert into conjuracao_tipo_dano(id_conjuracao, id_tipo_dano)
+values(1, 2);
+
+/* Ataque */
+
+/* Ataque Tipo Dano: Associativa */

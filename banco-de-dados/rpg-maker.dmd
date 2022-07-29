@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="rpg-maker" id="B95BE357-3577-13EF-AFA1-D9C805C19846" version="3.5">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:47:38 UTC</createdTime>
+<ownerDesignName>info_personagens</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>B95BE357-3577-13EF-AFA1-D9C805C19846</designId>
+</OSDM_Design>
