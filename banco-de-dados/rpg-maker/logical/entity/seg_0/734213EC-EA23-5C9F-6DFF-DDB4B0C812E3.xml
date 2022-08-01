@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="734213EC-EA23-5C9F-6DFF-DDB4B0C812E3" name="Saves">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 21:17:11 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_saves" id="D9B376DC-0FAC-F249-84E3-4B9BF884D5C9">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 21:19:46 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_ability" id="151FE006-2C2B-341C-BE28-ADF71CCFFA0D">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 21:18:12 UTC</createdTime>
+<generatorID>158A1AFD-0497-BA17-690D-A3B407CBD18F</generatorID>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<referedAttribute>F9AFC725-9470-C23B-F57D-824A09CC03F4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_classe" id="4E97A460-437C-5DAD-9DA3-ACCAD49EEE73">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-08-01 18:31:52 UTC</createdTime>
+<generatorID>0A69E20F-C173-AD3B-3D55-F713A8786958</generatorID>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<referedAttribute>A33E02DA-9494-8BB8-DCD1-3763D502AFCA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0F5FE0B1-AE76-30FF-F8E8-BB9C1AE0506C" name="Saves PK">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 21:19:53 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D9B376DC-0FAC-F249-84E3-4B9BF884D5C9</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

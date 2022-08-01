@@ -1,0 +1,370 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="92E6A449-00D0-A233-3CC8-190E6225502F" name="Classe-Nivel">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-23 14:38:19 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_classen" id="617BA966-66C4-EFE0-4F06-93C7424F9553">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-28 18:11:02 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nivel_classe" id="E777DA92-9466-2BB9-708C-3CC0E6B64A60">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 18:49:12 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="hit_die" id="064A5235-6A3A-8036-4657-DA76B7DAED08">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 20:44:36 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cantrips" id="83895341-9B83-9512-C93D-C42465A1C225">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:47:40 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="spells" id="0342877E-F0C7-8A4C-731F-36F9F21EE3DB">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:48:31 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="spell_slots_lvl_1" id="8646F856-89BC-1BAA-515F-320C881DB214">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:49:00 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="spell_slots_lvl_2" id="BF58EEDA-FB4C-B4C1-096B-EDDC4F5AD642">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:49:37 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="spell_slots_lvl_3" id="9946ACD4-B7EF-6D2D-055F-C1BCEC1E0680">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:49:51 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="spell_slots_lvl_4" id="286B2E65-75B5-3356-7615-4C57B57EF572">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:50:06 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="spell_slots_lvl_5" id="540BF4DE-BAE9-817D-3B58-112435C734BF">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:50:19 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="spell_slots_lvl_6" id="318C9B1F-7639-38AD-1DC7-CC8A5E1B365B">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:50:29 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="spell_slots_lvl_7" id="18106B25-9FD0-7EDF-666D-62351FF6C156">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:50:38 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="spell_slots_lvl_8" id="3A7B5DF1-955A-569D-09D1-DD6DF3FAF889">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:50:49 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="spell_slots_lvl_9" id="81F82772-5BE4-ED77-5324-89D511D57654">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:51:00 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="spell_slots" id="1E588BF3-D798-20FC-A2FF-ACF9A7A37EFD">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 20:19:13 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="slot_level" id="3376DCB3-9E6A-6AF1-6B44-FBF46A10A3F8">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 20:19:57 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="invocations" id="FE236663-2F9C-DBDA-010F-BE24F5C82DAE">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 20:20:26 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="sorcery_points" id="6D3CCD1B-ADCD-6A7C-52A9-3611BFB7DAC4">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 20:18:08 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rages" id="9AD77B00-8433-57C9-6848-6249D8AF53D8">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:53:07 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rage_dmg" id="2A92262B-2164-A070-15FC-0DA58BABD647">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:53:23 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ki" id="3AFCC640-5FB7-1DA6-E1F8-37B8C923D300">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 20:13:27 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="martial_arts" id="91CC7F52-A3A2-19B7-A1FE-A577195DEDF1">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 20:14:30 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="unarmored_movement" id="7F90BBD4-91FC-B48D-BBB6-02C109BC154A">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 20:14:57 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="sneak_attack" id="E3850895-8BF7-F14F-CC54-7EB31D205ADF">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 20:17:18 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descrition" id="4F8C15B3-EE68-B240-A1FA-40CE3582675F">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 20:21:03 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2000</dataTypeSize>
+<ownDataTypeParameters>2000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_classe" id="AF9C5E81-4AC2-0AE2-6361-77F69FA2C2CE">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-08-01 18:31:08 UTC</createdTime>
+<generatorID>17064A66-BE2B-E353-D2F4-0D9A58573B60</generatorID>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<referedAttribute>A33E02DA-9494-8BB8-DCD1-3763D502AFCA</referedAttribute>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E62DE944-B21A-1795-7FD1-186284CE1521" name="Classe PK">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-28 18:11:17 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>617BA966-66C4-EFE0-4F06-93C7424F9553</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

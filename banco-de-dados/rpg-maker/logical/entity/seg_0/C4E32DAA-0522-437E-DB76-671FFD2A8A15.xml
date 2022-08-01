@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C4E32DAA-0522-437E-DB76-671FFD2A8A15" name="Personagem_Debuff">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 18:53:11 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_pd" id="1ACF030F-E30A-D2B1-0FA6-A2C612E1322A">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 18:55:20 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_personagem" id="7A87A573-2598-D29C-9C83-B3E72FB23B35">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 18:53:36 UTC</createdTime>
+<generatorID>C020F09D-FD26-16A2-C155-F88BACDC3031</generatorID>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<referedAttribute>73835205-5BE9-07C0-6D2D-1AC97D1958D8</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_debuff" id="31E284D5-CEDB-C9F2-B398-1F6FBFE27F70">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 18:53:48 UTC</createdTime>
+<generatorID>926E35BB-E07C-3A7A-17E7-5543A6478143</generatorID>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<referedAttribute>68174D11-3307-EDDE-CB26-72D81D23F542</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="26C2F64E-7E1A-6543-6C5E-2BCBEF8D01F0" name="Personagem_Debuff PK">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 18:55:21 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1ACF030F-E30A-D2B1-0FA6-A2C612E1322A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

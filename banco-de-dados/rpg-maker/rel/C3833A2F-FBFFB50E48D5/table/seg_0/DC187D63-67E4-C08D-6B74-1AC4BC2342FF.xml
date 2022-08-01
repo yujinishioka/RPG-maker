@@ -1,0 +1,165 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DC187D63-67E4-C08D-6B74-1AC4BC2342FF" name="Personagem">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:48:54 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_personagem" id="2E580BBC-3B88-3B8F-B0F7-D10DCD4E35A9">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:50:05 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome_jogador" id="FEC7F20E-295A-E811-7946-455800E77FBB">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:50:05 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="DC343CF9-D7C9-16C3-047F-06EA21298E65">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:50:51 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="titulo" id="2279C02F-E807-4BF4-1209-25EDC379345A">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:50:51 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="raca_ID" id="05972664-B39A-4697-9A85-4E9B64441043">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:50:51 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="classe" id="70B1B4BA-65E5-8247-BBD9-2CB89D52CAEA">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:51:01 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="alinhamento" id="09206D3B-340B-EECC-2583-A2CEF243D0F2">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:58:25 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nivel" id="25E042E4-B5EF-49AF-45E5-51B2AE330F7C">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:58:25 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="experiencia" id="ADCF87B8-2C34-B985-804B-8936F0D53B80">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:58:25 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="iniciativa" id="F91BDFB8-F534-1B5A-4E1B-1C8D0737BA6F">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:58:25 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="deslocamento" id="3B8F1298-EAB4-C97F-4088-52271A867EA5">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:58:25 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="armadura" id="338DE8E5-6521-0F64-48C2-031CA7868724">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:58:25 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vida" id="EF216534-31C0-20F1-427E-2CA3BFA8F932">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:58:25 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status_ID" id="30306386-5C2C-D49F-9697-AF2407C08778">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:58:25 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="proficiencia" id="E02B9C90-CAB4-FF5F-4759-7FF053544D7E">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 16:44:46 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="inspiracao" id="5BC7CF60-62DD-91A6-D898-007DAA5EB376">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 17:00:24 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="debuff" id="ADF27C58-A2D9-2CD4-55FA-E57B7DDE02DC">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 17:00:31 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2BA80F33-D4DA-C581-53BF-A76700E9405D" name="Personagem_PK">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 14:50:51 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E580BBC-3B88-3B8F-B0F7-D10DCD4E35A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="273E8FE6-EAAE-5FB6-99F3-FFA9C6294408" name="Classe_Feature">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:44:30 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_cf" id="44BACA3D-1CBD-7958-51B3-4761C44209C7">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:45:07 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_classen" id="986B8AEA-046E-6AFC-CD16-3D8544769F08">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:44:51 UTC</createdTime>
+<generatorID>5AF81C28-56AF-2DC8-84FC-FFD8BA9CE05F</generatorID>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<referedAttribute>617BA966-66C4-EFE0-4F06-93C7424F9553</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_feature" id="A6C3B05B-4C2C-A70A-CA87-A8D483474EEC">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:45:38 UTC</createdTime>
+<generatorID>B2C85FCB-960C-879E-A426-01B6E521F683</generatorID>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<referedAttribute>EF917358-A0C5-5811-F898-7F509FB74845</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B1B4F7E9-5556-A354-9914-3EAD3023BED7" name="Classe_Feature PK">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:45:16 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>44BACA3D-1CBD-7958-51B3-4761C44209C7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

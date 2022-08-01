@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="02AAA072-5E71-3EF0-CCB4-CB7516CDF341" name="Personagem_Ataque">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-01 17:38:22 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_pa" id="07FDBDC3-8903-7780-A217-043B02912351">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-01 17:47:13 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_personagem" id="3D9C23AF-3975-E9B3-E4DD-5F4C77E76F10">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-01 17:46:57 UTC</createdTime>
+<generatorID>062D88AB-64DC-8978-9EAC-7232DBCC72B8</generatorID>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<referedAttribute>73835205-5BE9-07C0-6D2D-1AC97D1958D8</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_ataque" id="EEEE2CC6-6C61-BA96-0009-E18F729A19FD">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-01 17:58:58 UTC</createdTime>
+<generatorID>52603D9A-321E-C8DC-7DF2-2E384D5C734E</generatorID>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<referedAttribute>800911B1-E71C-69A1-9541-DF7B2294B87E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5BA436EA-99B4-7086-B500-FEF0D31AE75B" name="Personagem_Ataque PK">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-01 17:47:23 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>07FDBDC3-8903-7780-A217-043B02912351</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

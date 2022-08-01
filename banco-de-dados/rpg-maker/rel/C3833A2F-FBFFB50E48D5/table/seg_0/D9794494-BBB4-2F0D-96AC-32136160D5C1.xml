@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D9794494-BBB4-2F0D-96AC-32136160D5C1" name="status">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 16:42:55 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="statusID" id="673C4164-F423-A1A0-4ED9-CA12FCA67EF8">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 16:45:17 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="forca" id="0873F304-ADFF-4D6A-31C8-AEA1420FEF20">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 16:44:11 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="destreza" id="D82D8C99-C4B5-7571-5C39-99CD1D0E03D1">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 16:44:11 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="constituicao" id="B41D53CE-FDA3-8F6B-E9CC-5B124E4999BB">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 16:44:11 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="inteligencia" id="3F4183CB-EDCA-8FBF-20BC-630AC4D96468">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 16:44:11 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sabedoria" id="55D6F52D-848A-6CC0-867B-6947065F2763">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 16:44:11 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="carisma" id="F1770464-1BE3-562B-1928-624F0FA57ADD">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 16:44:11 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C8363634-B8D3-1B1D-E172-C20A3F2D43B5" name="status_PK">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-06-22 16:45:23 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="673C4164-F423-A1A0-4ED9-CA12FCA67EF8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

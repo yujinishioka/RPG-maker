@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_43" directorySegmentName="seg_0" id="5AF81C28-56AF-2DC8-84FC-FFD8BA9CE05F">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-07-20 19:44:51 UTC</createdTime>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<sourcePk>E62DE944-B21A-1795-7FD1-186284CE1521</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>92E6A449-00D0-A233-3CC8-190E6225502F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>273E8FE6-EAAE-5FB6-99F3-FFA9C6294408</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
