@@ -3,9 +3,11 @@ import { Injectable } from "@angular/core";
 import { Observable } from 'rxjs';
 
 import { Alinhamento } from "../models/alinhamento";
+import { Classe } from "../models/classe";
 import { Personagem } from './../models/personagem';
-import { environment } from './../../environments/environment';
 import { Status } from "../models/status";
+
+import { environment } from './../../environments/environment';
 
 @Injectable()
 export class ApiService {
@@ -37,6 +39,16 @@ export class ApiService {
 
   getAlinhamento(id:number): Observable<Alinhamento> {
     let response = this.http.get<Alinhamento>(`${this.baseUrl}/alinhamentos/${id}`);
+    return response;
+  }
+
+  getAllClasses(): Observable<Classe[]> {
+    let response = this.http.get<Classe[]>(`${this.baseUrl}/classes`);
+    return response
+  }
+
+  getClasse(id: number): Observable<Classe> {
+    let response = this.http.get<Classe>(`${this.baseUrl}/classes/${id}`);
     return response;
   }
 

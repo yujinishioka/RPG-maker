@@ -1,4 +1,5 @@
 <h2>Personagens</h2>
+
 <ul class="personagens">
   <li *ngFor="let personagem of personagens">
     <a routerLink="/personagens/{{ personagem.id_personagem }}">
@@ -7,3 +8,7 @@
     </a>
   </li>
 </ul>
+
+<div class="novo-personagem">
+  <a routerLink="/personagens/novo">+ Novo Personagem</a>
+</div>

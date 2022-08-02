@@ -9,15 +9,17 @@ import { AppComponent } from './app.component';
 import { PersonagensComponent } from './components/personagens/personagens.component';
 import { PersonagemInfoComponent } from './components/personagens/info/info.component';
 import { PersonagemEditarComponent } from './components/personagens/info/editar/editar.component';
+import { PersonagemNovoComponent } from './components/personagens/novo/novo.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
     PersonagensComponent,
     PersonagemInfoComponent,
     PersonagemEditarComponent,
-    DashboardComponent,
+    PersonagemNovoComponent,
   ],
   imports: [
     AppRoutingModule,

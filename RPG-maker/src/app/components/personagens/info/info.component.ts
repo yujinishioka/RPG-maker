@@ -1,12 +1,13 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { mergeMap } from 'rxjs';
 
 import { ApiService } from './../../../services/api.service';
 import { Alinhamento } from '../../../models/alinhamento';
 import { Personagem } from '../../../models/personagem';
-import { mergeMap } from 'rxjs';
-import { Status } from 'src/app/models/status';
+import { Classe } from '../../../models/classe';
+import { Status } from '../../../models/status';
 
 @Component({
   selector: 'app-personagem-detalhes',
@@ -16,8 +17,9 @@ import { Status } from 'src/app/models/status';
 export class PersonagemInfoComponent implements OnInit {
 
   personagem!: Personagem;
-  status!: Status[];
   alinhamento!: Alinhamento;
+  classe!: Classe;
+  status!: Status[];
 
   constructor(
     private route: ActivatedRoute,
@@ -27,8 +29,6 @@ export class PersonagemInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPersonagemFromAPI();
-    console.log(`this.personagem: ${this.personagem}`)
-
   }
 
   getPersonagemFromAPI(): void {
@@ -48,6 +48,8 @@ export class PersonagemInfoComponent implements OnInit {
       return this.alinhamento = alinhamento;
     });
   }
+
+  // getClasse()
 
   goBack(): void {
     this.location.back();

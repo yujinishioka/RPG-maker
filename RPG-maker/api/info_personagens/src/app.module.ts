@@ -10,7 +10,7 @@ import { ConjuracoesModule } from './conjuracoes/conjuracoes.module';
 import { AlinhamentosModule } from './alinhamentos/alinhamentos.module';
 import { PersonagensModule } from './personagens/personagens.module';
 import { StatusModule } from './status/status.module';
-import { ClasseModule } from './classe/classe.module';
+import { ClassesModule } from './classes/classes.module';
 
 @Module({
   imports: [
@@ -32,7 +32,7 @@ import { ClasseModule } from './classe/classe.module';
     AlinhamentosModule,
     PersonagensModule,
     StatusModule,
-    ClasseModule,
+    ClassesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

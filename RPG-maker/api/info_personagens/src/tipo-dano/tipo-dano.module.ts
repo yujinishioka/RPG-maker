@@ -1,6 +1,6 @@
-import { TipoDano } from './entities/tipo-dano.entity';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { TipoDano } from './entities/tipo-dano.entity';
 import { TipoDanoService } from './tipo-dano.service';
 import { TipoDanoController } from './tipo-dano.controller';
 
