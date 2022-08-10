@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_classen" id="986B8AEA-046E-6AFC-CD16-3D8544769F08">
+<Attribute name="id_classe_nivel" id="986B8AEA-046E-6AFC-CD16-3D8544769F08">
 <createdBy>ViniciusNishioka</createdBy>
 <createdTime>2022-07-20 19:44:51 UTC</createdTime>
 <generatorID>5AF81C28-56AF-2DC8-84FC-FFD8BA9CE05F</generatorID>

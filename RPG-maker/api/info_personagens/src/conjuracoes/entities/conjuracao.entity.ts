@@ -1,4 +1,3 @@
-import { Dano } from '../../dano/entities/dano.entity';
 import {
   Column,
   Entity,
@@ -8,7 +7,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { TipoDano } from 'src/tipo-dano/entities/tipo-dano.entity';
+import { Dano } from '../../dano/entities/dano.entity';
+import { TipoDano } from '../../tipo-dano/entities/tipo-dano.entity';
 
 @Entity()
 export class Conjuracao {

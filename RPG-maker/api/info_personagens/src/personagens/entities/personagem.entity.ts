@@ -1,4 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { ClasseNivel } from '../../classe-nivel/entities/classe-nivel.entity';
 
 @Entity()
 export class Personagem {
@@ -82,4 +89,16 @@ export class Personagem {
 
   @Column()
   id_alinhamento: number;
+
+  @ManyToMany(() => ClasseNivel)
+  @JoinTable({
+    name: 'personagem_classe',
+    joinColumn: {
+      name: 'id_personagem',
+    },
+    inverseJoinColumn: {
+      name: 'id_classe_nivel',
+    },
+  })
+  classeNivel: ClasseNivel[];
 }

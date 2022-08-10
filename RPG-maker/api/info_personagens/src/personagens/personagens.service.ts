@@ -18,6 +18,7 @@ export class PersonagensService {
   findAll() {
     return this.personagensRepository.find({
       order: { id_personagem: 'ASC' },
+      relations: ['classeNivel'],
     });
   }
 

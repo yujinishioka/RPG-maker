@@ -28,6 +28,7 @@ export class PersonagemInfoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log('teste');
     this.getPersonagemFromAPI();
   }
 

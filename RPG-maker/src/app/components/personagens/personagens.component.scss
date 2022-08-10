@@ -12,47 +12,47 @@ h2 {
     display: flex;
 
     &:hover {
-    left: .1em;
+      left: .1em;
     }
-  }
 
-  a {
-    color: #333;
-    text-decoration: none;
-    background-color: #EEE;
-    margin: .5em;
-    padding: .3em 0;
-    height: 1.6em;
-    border-radius: 4px;
-    display: block;
-    width: 100%;
+    a {
+      color: #333;
+      text-decoration: none;
+      background-color: #EEE;
+      margin: .5em;
+      padding: .3em 0;
+      height: 1.6em;
+      border-radius: 4px;
+      display: block;
+      width: 100%;
 
-    &:hover {
-      color: #fafafa;
-      background-color: #369;
+      &:hover {
+        color: #fafafa;
+        background-color: #369;
       }
 
-    &:active {
-      background-color: #525252;
-      color: #fafafa;
-    }
-  }
+      &:active {
+        background-color: #525252;
+        color: #fafafa;
+      }
 
-  .badge {
-    display: inline-block;
-    font-size: small;
-    color: white;
-    padding: 0.8em 0.7em 0 0.7em;
-    background-color: #405061;
-    line-height: 1em;
-    position: relative;
-    left: -1px;
-    top: -4px;
-    height: 1.8em;
-    min-width: 16px;
-    text-align: right;
-    margin-right: .8em;
-    border-radius: 4px 0 0 4px;
+      .badge {
+        display: inline-block;
+        font-size: small;
+        color: white;
+        padding: 0.8em 0.7em 0 0.7em;
+        background-color: #405061;
+        line-height: 1em;
+        position: relative;
+        left: -1px;
+        top: -4px;
+        height: 1.8em;
+        min-width: 16px;
+        text-align: right;
+        margin-right: .8em;
+        border-radius: 4px 0 0 4px;
+      }
+    }
   }
 }
 
@@ -63,21 +63,22 @@ h2 {
   width: 15em;
 
   a {
-    color: #333;
-    text-align: center;
-    text-decoration: none;
-    background-color: #EEE;
     margin: .5em;
     padding: .8em 0;
     height: 1.6em;
-    border-radius: 15px;
-    display: block;
     width: 90%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    background-color: #EEE;
+    border: 1px solid black;
+    border-radius: 15px;
 
     &:hover {
       color: #fafafa;
       background-color: #42545C;
-      }
+    }
 
     &:active {
       color: #fafafa;

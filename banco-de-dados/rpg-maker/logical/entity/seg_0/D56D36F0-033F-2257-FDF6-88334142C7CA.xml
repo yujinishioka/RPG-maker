@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_pclasse" id="F7256A62-C902-EA6E-D982-6AD344919580">
+<Attribute name="id_pc" id="F7256A62-C902-EA6E-D982-6AD344919580">
 <createdBy>ViniciusNishioka</createdBy>
 <createdTime>2022-07-20 19:02:58 UTC</createdTime>
 <ownerDesignName>rpg-maker</ownerDesignName>
@@ -41,15 +41,16 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_classe" id="18FECB17-3FB7-880C-4340-FE4D84274F15">
+<Attribute name="id_classe_nivel" id="ADD7EEE8-6329-E409-F32C-7D95ED0A11C8">
 <createdBy>ViniciusNishioka</createdBy>
-<createdTime>2022-08-01 18:31:08 UTC</createdTime>
-<generatorID>6F5014D3-3B0D-D817-5088-BCB9870449FD</generatorID>
+<createdTime>2022-08-03 14:17:18 UTC</createdTime>
+<generatorID>1411A9F6-3BDB-4D70-88F2-1396E2067096</generatorID>
 <ownerDesignName>rpg-maker</ownerDesignName>
 <engineerTo>
 <item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
 </engineerTo>
-<referedAttribute>A33E02DA-9494-8BB8-DCD1-3763D502AFCA</referedAttribute>
+<referedAttribute>617BA966-66C4-EFE0-4F06-93C7424F9553</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>

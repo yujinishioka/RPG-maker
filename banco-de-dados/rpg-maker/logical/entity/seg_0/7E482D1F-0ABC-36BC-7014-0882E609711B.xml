@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="92E6A449-00D0-A233-3CC8-190E6225502F" name="Classe-Nivel">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7E482D1F-0ABC-36BC-7014-0882E609711B" name="Atributo-Classe-Nivel">
 <createdBy>ViniciusNishioka</createdBy>
-<createdTime>2022-06-23 14:38:19 UTC</createdTime>
+<createdTime>2022-08-04 18:53:14 UTC</createdTime>
 <ownerDesignName>rpg-maker</ownerDesignName>
 <engineerTo>
 <item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_classe_nivel" id="617BA966-66C4-EFE0-4F06-93C7424F9553">
+<Attribute name="id_acn" id="60E0BF48-9406-5A05-BF4D-2D9898B8917A">
 <createdBy>ViniciusNishioka</createdBy>
-<createdTime>2022-06-28 18:11:02 UTC</createdTime>
+<createdTime>2022-08-04 18:55:40 UTC</createdTime>
 <ownerDesignName>rpg-maker</ownerDesignName>
 <engineerTo>
 <item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
@@ -27,28 +27,42 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nivel_classe" id="E777DA92-9466-2BB9-708C-3CC0E6B64A60">
+<Attribute name="valor" id="11BF9885-B5C7-AA23-2245-FA83A25A001F">
 <createdBy>ViniciusNishioka</createdBy>
-<createdTime>2022-07-20 18:49:12 UTC</createdTime>
+<createdTime>2022-08-04 18:55:16 UTC</createdTime>
 <ownerDesignName>rpg-maker</ownerDesignName>
 <engineerTo>
 <item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>3</dataTypePrecision>
-<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_classe" id="BB2ACC73-850D-4496-32C7-99846EBD32D4">
+<Attribute name="id_classe_nivel" id="D5854656-0AC2-2452-6D9F-008DB026A59D">
 <createdBy>ViniciusNishioka</createdBy>
-<createdTime>2022-08-04 18:40:45 UTC</createdTime>
-<generatorID>B3F85687-91F8-A425-332E-36D9E6D10713</generatorID>
+<createdTime>2022-08-04 18:54:39 UTC</createdTime>
+<generatorID>F366188D-EEE6-8052-DF89-B764D7DEB268</generatorID>
 <ownerDesignName>rpg-maker</ownerDesignName>
 <engineerTo>
 <item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
 </engineerTo>
-<referedAttribute>A33E02DA-9494-8BB8-DCD1-3763D502AFCA</referedAttribute>
+<referedAttribute>617BA966-66C4-EFE0-4F06-93C7424F9553</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_classe_atributo" id="721EB3BE-1A1A-981E-8AF1-9C6C87D140AF">
+<createdBy>ViniciusNishioka</createdBy>
+<createdTime>2022-08-04 18:56:18 UTC</createdTime>
+<generatorID>E891D65D-272B-A243-1202-C4BF2C01689C</generatorID>
+<ownerDesignName>rpg-maker</ownerDesignName>
+<engineerTo>
+<item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
+</engineerTo>
+<referedAttribute>706C7C81-4196-F701-37BF-90D364122C38</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -56,16 +70,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="E62DE944-B21A-1795-7FD1-186284CE1521" name="Classe PK">
+<identifier id="B3490463-ED6B-F604-D088-45CA81D40163" name="Atributo-Classe-Nivel PK">
 <createdBy>ViniciusNishioka</createdBy>
-<createdTime>2022-06-28 18:11:17 UTC</createdTime>
+<createdTime>2022-08-04 18:55:44 UTC</createdTime>
 <ownerDesignName>rpg-maker</ownerDesignName>
 <engineerTo>
 <item key="C3833A2F-53C9-6A2A-D8C3-FBFFB50E48D5" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>617BA966-66C4-EFE0-4F06-93C7424F9553</attributeRef>
+<attributeRef>60E0BF48-9406-5A05-BF4D-2D9898B8917A</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

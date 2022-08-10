@@ -11,6 +11,8 @@ import { AlinhamentosModule } from './alinhamentos/alinhamentos.module';
 import { PersonagensModule } from './personagens/personagens.module';
 import { StatusModule } from './status/status.module';
 import { ClassesModule } from './classes/classes.module';
+import { ClasseNivelModule } from './classe-nivel/classe-nivel.module';
+import { PersonagemClasseModule } from './personagem-classe/personagem-classe.module';
 
 @Module({
   imports: [
@@ -33,6 +35,8 @@ import { ClassesModule } from './classes/classes.module';
     PersonagensModule,
     StatusModule,
     ClassesModule,
+    ClasseNivelModule,
+    PersonagemClasseModule,
   ],
   controllers: [AppController],
   providers: [AppService],

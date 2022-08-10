@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_pa" id="1F6C23F2-C1FB-2488-835C-810ED5925060">
+<Attribute name="id_primary_ability" id="1F6C23F2-C1FB-2488-835C-810ED5925060">
 <createdBy>ViniciusNishioka</createdBy>
 <createdTime>2022-08-01 18:30:09 UTC</createdTime>
 <ownerDesignName>rpg-maker</ownerDesignName>

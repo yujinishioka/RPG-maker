@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_sraca" id="9DE52446-095A-BD0B-4056-FDC06AE77058">
+<Attribute name="id_subraca" id="9DE52446-095A-BD0B-4056-FDC06AE77058">
 <createdBy>ViniciusNishioka</createdBy>
 <createdTime>2022-06-28 18:10:17 UTC</createdTime>
 <ownerDesignName>rpg-maker</ownerDesignName>
